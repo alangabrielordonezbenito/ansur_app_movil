@@ -1,4 +1,7 @@
+import 'package:ansur_app_movil/models/productos.dart';
 import 'package:flutter/material.dart';
+
+import '../widgets/squar_avatar.dart';
 
 class ProductosScreen extends StatelessWidget {
   const ProductosScreen({
@@ -55,7 +58,25 @@ class _Body extends StatelessWidget {
           ],),
         ),
         const SizedBox(height: 20,),
-        
+        Expanded(
+          child: ListView.builder(
+            itemCount: productos.length,
+            itemBuilder: (BuildContext context, int index) { 
+            return Card(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  ListTile(
+                    leading: SquarAvatar(producto: productos[index].image),
+                    title: Text(productos[index].name),
+                    subtitle: Text(productos[index].marca+' - '+productos[index].unidad),
+                    trailing: Text('S/. ${productos[index].precio}'),
+                  )
+                ],
+              ),
+            );
+           },),
+        ),
       ],
     );
   }
