@@ -2,6 +2,7 @@ import 'package:ansur_app_movil/models/productos.dart';
 import 'package:flutter/material.dart';
 
 import 'widgets/squar_avatar.dart';
+import 'package:ansur_app_movil/views/shopping_cart_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({
@@ -24,7 +25,17 @@ class HomeScreen extends StatelessWidget {
         
         centerTitle: false,
       ),
-      body: _Body()
+      body: _Body(),
+      floatingActionButton: FloatingActionButton(
+        onPressed: (){
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) => const ShoppingCartScreen(), 
+            ),
+          );
+        },
+        child: const Icon(Icons.shopping_cart_outlined),
+      ),
     );
   }
 }
