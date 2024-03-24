@@ -25,7 +25,7 @@ class HomeScreen extends StatelessWidget {
         
         centerTitle: false,
       ),
-      body: _Body(),
+      body: _Body(),//este cuerpo se ha agregado aqui
       floatingActionButton: FloatingActionButton(
         onPressed: (){
           Navigator.of(context).push(
